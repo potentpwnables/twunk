@@ -129,7 +129,7 @@ class Firehose(tweepy.StreamListener):
     
     
     def push_to_kv(self, splunk, data):
-        results = splunk.post('servicesNS/nobody/bcbsm_soc/storage/collections/data/twitterIOCs', headers={'Content-Type': 'application/json'}, data=data)
+        results = splunk.post('servicesNS/nobody/<splunk app name>/storage/collections/data/<kv lookup table name>', headers={'Content-Type': 'application/json'}, data=data)
         return None
 
 
